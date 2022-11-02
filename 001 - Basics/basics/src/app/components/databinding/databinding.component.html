@@ -1,0 +1,18 @@
+<h5>String Interpolation</h5>
+<span>{{ data }}</span>
+<hr />
+
+<h5>Listen to User Events</h5>
+<button (click)="handleClick()" class="btn btn-primary">
+  Click to Show an Alert
+</button>
+<hr />
+
+<h5>Informal way to add Two-Way-Databinding (using <code>$event</code>)</h5>
+<input type="text" (input)="handleChange($event)" />
+<p>Your name is: {{ name }}</p>
+<hr />
+
+<h5>Correct way to add Two-Way-Databinding (using <code>[(ngModel)]</code>)</h5>
+<input type="text" [(ngModel)]="username" />
+<p>Your username is: {{ username }}</p>

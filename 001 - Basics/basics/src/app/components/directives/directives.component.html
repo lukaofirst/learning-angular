@@ -1,0 +1,31 @@
+<h5>Output Data Conditionally <code>*ngIf</code></h5>
+<button (click)="toggleMessage()" class="btn btn-primary">
+  Toggle Message
+</button>
+<p *ngIf="showMessage; else elseBlock">
+  Some message to be displayed if condition is true
+</p>
+<ng-template #elseBlock>
+  <p>Some message to be displayed if condition is false</p>
+</ng-template>
+<hr />
+
+<h5>Styling Elements Conditionally <code>[ngStyle] [ngClass]</code></h5>
+<button
+  (click)="toggleSuccess()"
+  class="btn"
+  [ngClass]="success ? 'btn-success' : 'btn-danger'"
+>
+  Toggle Color Button
+</button>
+<p [ngStyle]="{ backgroundColor: getColor() }" class="mt-3 text-white">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, accusamus!
+</p>
+<hr />
+
+<h5>Outputting Lists <code>*ngFor</code></h5>
+<div>
+  <p *ngFor="let technology of technologies; let i = index">
+    {{ i }}: {{ technology }}
+  </p>
+</div>
