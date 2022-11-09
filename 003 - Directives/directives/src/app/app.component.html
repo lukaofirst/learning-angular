@@ -1,0 +1,17 @@
+<div class="container">
+  <p appBasicHighlight>Styled using appBasicHighlight directive</p>
+  <p appBetterHighlight="1.2rem">Styled using betterBasicHighlight directive</p>
+  <button class="btn btn-primary" (click)="toggleShowParagraph()">
+    Toggle Paragraph
+  </button>
+  <p *appUnless="showParagraph">
+    Text that contains the usage of UnlessDirective
+  </p>
+
+  <div [ngSwitch]="value">
+    <h2 *ngSwitchCase="10">10</h2>
+    <h3 *ngSwitchCase="100">100</h3>
+    <h4 *ngSwitchCase="1000">1000</h4>
+    <h5 *ngSwitchDefault>default</h5>
+  </div>
+</div>
