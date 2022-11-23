@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8">
+      <form [formGroup]="signUpForm" (ngSubmit)="handleSubmit()">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              formControlName="username"
+              class="form-control"
+              [ngClass]="
+                !signUpForm.get('userData.username')!.valid &&
+                signUpForm.get('userData.username')!.touched
+                  ? 'border border-danger'
+                  : ''
+              "
+            />
+            <p
+              *ngIf="
+                !signUpForm.get('userData.username')!.valid &&
+                signUpForm.get('userData.username')!.touched
+              "
+              class="text-danger"
+            >
+              <span
+                *ngIf="
+                  signUpForm.get('userData.username')!.errors![
+                    'nameIsForbidden'
+                  ]
+                "
+                >This name is forbidden!</span
+              >
+              <span
+                *ngIf="signUpForm.get('userData.username')!.errors!['required']"
+                >This field is required!</span
+              >
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              id="email"
+              [formControlName]="'email'"
+              class="form-control"
+              [ngClass]="
+                !signUpForm.get('userData.email')!.valid &&
+                signUpForm.get('userData.email')!.touched
+                  ? 'border border-danger'
+                  : ''
+              "
+            />
+            <p
+              *ngIf="
+                !signUpForm.get('userData.email')!.valid &&
+                signUpForm.get('userData.email')!.touched
+              "
+              class="text-danger"
+            >
+              <span
+                *ngIf="
+                  signUpForm.get('userData.email')!.errors!['emailIsForbidden']
+                "
+                >This email is forbidden!</span
+              >
+              <!-- Please enter a valid email -->
+            </p>
+          </div>
+        </div>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" formControlName="gender" [value]="gender" />{{
+              gender
+            }}
+          </label>
+        </div>
+        <div formArrayName="hobbies">
+          <h4>Your Hobbies</h4>
+          <button class="btn btn-secondary" (click)="handleAddHobby()">
+            Add Hobby
+          </button>
+          <div
+            class="form-group"
+            *ngFor="let hobbyControl of getControls(); let i = index"
+          >
+            <input type="text" class="form-control" [formControlName]="i" />
+          </div>
+        </div>
+        <p *ngIf="!signUpForm.valid && signUpForm.touched" class="text-danger">
+          Please enter a valid data
+        </p>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
