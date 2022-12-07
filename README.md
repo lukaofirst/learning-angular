@@ -55,6 +55,23 @@
         -   Creating Custom Validators and Custom Async Validators
         -   Observables of a reactive form
         -   Setting/Patching form values
+-   Pipes
+    -   Using built-in pipes
+    -   Creating custom pipes
+    -   The filtering pipe's problem
+    -   Chaining multiple pipes
+-   Http Requests
+    -   Injecting and using types with <code>HttpClient</code>
+    -   Handling Errors
+    -   Making CRUD operations
+    -   Setting Headers and Query Params
+    -   Changing the default response
+    -   Interceptors
+-   Modules and Lazy Loading
+    -   Module's definition
+    -   Using Shared Module (Declaring Components, Directives and Pipes only once)
+    -   Lazy Loading
+    -   Preloading Lazy Loaded Code
 
 <h4>Notes<h4>
 
