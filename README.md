@@ -72,6 +72,10 @@
     -   Using Shared Module (Declaring Components, Directives and Pipes only once)
     -   Lazy Loading
     -   Preloading Lazy Loaded Code
+-   Standalone Components
+    -   What they are and what changes?
+    -   Building a Standalone Component
+    -   Services, Routing and Lazy Loading with Standalone Component
 
 <h4>Notes<h4>
 
