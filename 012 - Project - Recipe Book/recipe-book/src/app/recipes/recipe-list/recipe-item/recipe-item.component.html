@@ -1,0 +1,24 @@
+<div
+  class="card mb-3"
+  style="max-width: 100%; cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="bg-success text-white"
+>
+  <div class="row g-0 d-flex align-items-center">
+    <div class="col-md-7">
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.name }}</h5>
+        <p class="card-text">
+          {{ recipe.description }}
+        </p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <img
+        [src]="recipe.imagePath"
+        class="img-fluid"
+        alt="{{ recipe.description }}"
+      />
+    </div>
+  </div>
+</div>
